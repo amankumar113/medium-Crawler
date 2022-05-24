@@ -3,17 +3,23 @@ const express = require('express')
 const make_request = require('./request')
 const path = require('path')
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/idioms_db");
-
+//connecting database
+try{
+    mongoose.connect("mongodb://localhost:27017/idioms_db");
+    console.log(`database connected`);
+} 
+catch(err) {
+    console.log(err);
+}
 const app = express()
 
-const srcDirectoryPath = path.join(__dirname, './src')
+const publicDirectoryPath = path.join(__dirname, './public')
 
-app.use(express.static(srcDirectoryPath))
+app.use(express.static(publicDirectoryPath))
 app.use(express.json())
 
 app.get('', (req, res) => {
-    res.sendFile(`${srcDirectoryPath}/index.html`)
+    res.sendFile(`${publicDirectoryPath}/index.html`)
 })
 
 app.get('/search', async (req, res) => {

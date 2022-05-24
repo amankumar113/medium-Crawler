@@ -1,5 +1,4 @@
-
-// // const Post = require('../../backend/models/blog')
+// const Post = require('../../backend/models/blog')
 const form = document.getElementById("search");
 function handleForm(event) { event.preventDefault(); } 
 form.addEventListener('submit', handleForm);
@@ -39,7 +38,6 @@ async function performRequest(tags, page, flag) {
     url = document.URL + 'search?'
     
     var searchParams = new URLSearchParams()
-    
     Object.keys(params).forEach(key => searchParams.append(key, params[key]))
     url = url + searchParams.toString()
     //fetching url of the page

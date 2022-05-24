@@ -1,3 +1,5 @@
+const Post = require('./backend/models/blog')
+
 const https = require('https')
 
 async function doRequest(options, body) {
@@ -31,7 +33,18 @@ async function doRequest(options, body) {
                   });
           
                   resolve(pages)
-                  console.log(pages)
+
+                for(let i=0; i<pages.length;i++){
+                    const post = new Post({
+                    creator:pages[i]['Creator'],
+                    title:pages[i]['Title'],
+                    link:pages[i]['Medium URL'],
+                    tags:pages[i]['Tags'],
+                    details:pages[i]['Details'],
+                });
+                    post.save();
+        }
+                //   console.log(pages)
               });
           })
           //in case of error
