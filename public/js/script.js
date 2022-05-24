@@ -87,7 +87,6 @@ function appendTable(data) {
 }
 
 document.getElementById("find").addEventListener("click", function(){
-    console.log('clicked by go');
     tags = document.getElementById('tags').value
     page = 0
     performRequest(tags, page, 0)
@@ -101,17 +100,17 @@ document.getElementById("crawl").addEventListener("click", async function(){
     performRequest(tags, page, 1)
 })
 
-// document.getElementById("history").addEventListener("click" , function searchItem(){
-//     console.log('clicked by search');
-//     tags = document.getElementById('tags').value
-//     const searchHistory = [];
-//     searchHistory.push(tags);
-//     let result;
-//     for (i = 0; i < searchHistory.length; i++){
-//         result =  "<button class='btn btn-outline-secondary' style='display:none; margin-left:3px;'>" + searchHistory[i] + "</button>"
-//         console.log(result);
-//         var div = document.getElementById('search');
-//         div.innerHTML = result;
-//     }
+document.getElementById("history").addEventListener("click" , function(){
+    console.log('clicked by search');
+    tags = document.getElementById('tags').value
+    const searchHistory = [];
+    searchHistory.push(tags);
+    let result;
+    for (i = 0; i < searchHistory.length; i++){
+        result =  "<button class='btn btn-outline-primary' style='display:none; margin-left:3px;'>" + searchHistory[i] + "</button>"
+        console.log(result);
+        var div = document.getElementById('search');
+        div.innerHTML = result;
+    }
         
-// })
+})
