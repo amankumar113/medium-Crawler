@@ -1,5 +1,4 @@
 
-// const { default: mongoose } = require("mongoose");
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
@@ -9,5 +8,5 @@ const postSchema = new mongoose.Schema({
     tags: Array,
     details: String,
 });
-// Post = model("post", postSchema);
+
 module.exports = mongoose.model("Post", postSchema);
