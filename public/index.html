@@ -20,14 +20,19 @@
                         width: 12%;
                       " src="https://miro.medium.com/max/8978/1*s986xIGqhfsN8U--09_AdA.png" class="img-fluid" alt="Medium Logo">
                     <form id="search" onsubmit="false">
-                        <div class="input-group mb-5 " style="padding:0% 25%; width:90%">
+                        <div class="input-group mb-5 " style="padding:0% 25%; width:90%; margin-left: 5%;">
                             <input id="tags" name="tags" type="text" class="form-control" placeholder="Enter tags" aria-label="Cybersecurity" aria-describedby="basic-addon2" style=" border-radius: 30px 0 0 30px;" required>
                             <button class="btn btn-outline-secondary" id="find" type="submit" style="margin-left:0.5px; border-radius: 0 30px 30px 0;">Go</button>
                         </div>
                     </form>
-
+                    
                 </div>
             </div>
+            <!-- <div>
+                <button class="btn btn-outline-secondary" id="history" type="submit" style="margin-left:65%; border-radius: 30px 30px 30px 30px; ">Search History</button>
+                <div id="search">
+                </div>
+            </div> -->
         </div>
     </div>
     
@@ -45,5 +50,9 @@
 
 <script type="application/javascript" src='./js/script.js' ></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/dataTables.bootstrap4.min.js></script>
-
+<script>
+    function hello(){
+        console.log(document.getElementById('tags').value);
+    }
+</script>
 </html>

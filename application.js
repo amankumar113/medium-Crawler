@@ -5,7 +5,8 @@ const path = require('path')
 const mongoose = require("mongoose");
 //connecting database
 try{
-    mongoose.connect("mongodb://localhost:27017/idioms_db");
+    mongoose.connect("mongodb+srv://aman-personal:8433012381aBc%40@cluster0.iq5ip.mongodb.net/mediumcrawler?retryWrites=true&w=majority");
+    // mongoose.connect("mongodb://localhost:27017/idioms_db");
     console.log(`database connected`);
 } 
 catch(err) {

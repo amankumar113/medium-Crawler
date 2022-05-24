@@ -46,18 +46,6 @@ async function performRequest(tags, page, flag) {
     if (response.ok) {
         //getting json of crawl data from medium.com
         let json = await response.json();
-        //sending data to backend
-        // for(let i=0; i<json.length;i++){
-        //     Post = new Post({
-        //      creator: json[i]['Creator'],
-        //      title: json[i]['title'],
-        //      link: json[i]['link'],
-        //      tags: json[i]['tags'],
-        //      details: json[i]['details'],
-        //     });
-        //     Post.save();
-        // }
-        
         result_box = document.getElementById('result')
         //if crawling is happening on first time that at that time flag is equal to 0 
         //else simple append that data to existing table
@@ -99,6 +87,7 @@ function appendTable(data) {
 }
 
 document.getElementById("find").addEventListener("click", function(){
+    console.log('clicked by go');
     tags = document.getElementById('tags').value
     page = 0
     performRequest(tags, page, 0)
@@ -112,3 +101,17 @@ document.getElementById("crawl").addEventListener("click", async function(){
     performRequest(tags, page, 1)
 })
 
+// document.getElementById("history").addEventListener("click" , function searchItem(){
+//     console.log('clicked by search');
+//     tags = document.getElementById('tags').value
+//     const searchHistory = [];
+//     searchHistory.push(tags);
+//     let result;
+//     for (i = 0; i < searchHistory.length; i++){
+//         result =  "<button class='btn btn-outline-secondary' style='display:none; margin-left:3px;'>" + searchHistory[i] + "</button>"
+//         console.log(result);
+//         var div = document.getElementById('search');
+//         div.innerHTML = result;
+//     }
+        
+// })
